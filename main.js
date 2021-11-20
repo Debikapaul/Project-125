@@ -10,7 +10,7 @@ function setup(){
     canvas.position(560,150);
 
     poseNet=ml5.poseNet(video,modelLoaded);
-    poseNet.on('pose',gotposes);
+    poseNet.on('pose',gotPoses);
 }
 
 function modelLoaded(){
@@ -19,12 +19,12 @@ function modelLoaded(){
 
 function draw(){
     background(	'#0ce8f0');
-    textsize(differance);
+    textSize(differance);
     fill('#fc036f');
     text('Debika',50,400);
 }
 
-function gotposes(results){
+function gotPoses(results){
     if(results.length > 0){
 
         console.log(results);
@@ -32,6 +32,8 @@ function gotposes(results){
         leftWristX=results[0].pose.leftWrist.x;
         rightWristX=results[0].pose.rightWrist.x;
         differance=floor(leftWristX-rightWristX);
+        console.log("leftWristX =" + leftWristX + " , rightWristX =" + rightWristX + ", differance =" + differance);
+
 
     }
 
