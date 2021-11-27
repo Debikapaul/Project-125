@@ -1,6 +1,6 @@
 leftWristX=0;
 rightWristX=0;
-differance=0;
+difference=0;
 
 function setup(){
     video=createCapture(VIDEO);
@@ -20,7 +20,7 @@ function modelLoaded(){
 function draw(){
     background(	'#0ce8f0');
     document.getElementById("font_size").innerHTML = "Font size of the text will be = " + difference +"px";
-    textSize(differance);
+    textSize(difference);
     fill('#fc036f');
     text('Debika',50,400);
 }
@@ -32,8 +32,8 @@ function gotPoses(results){
 
         leftWristX=results[0].pose.leftWrist.x;
         rightWristX=results[0].pose.rightWrist.x;
-        differance=floor(leftWristX-rightWristX);
-        console.log("leftWristX =" + leftWristX + " , rightWristX =" + rightWristX + ", differance =" + differance);
+        difference=floor(leftWristX-rightWristX);
+        console.log("leftWristX =" + leftWristX + " , rightWristX =" + rightWristX + ", difference =" + difference);
 
 
     }
